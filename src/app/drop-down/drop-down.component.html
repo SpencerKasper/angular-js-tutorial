@@ -1,6 +1,10 @@
 <div class="dropdown">
   <span (click)="toggle()">Select Quantity</span>
-  <div class="dropdown-content" *ngIf="isOpen === true">
-    <p>Hello World!</p>
+  <div class="dropdown-content" *ngIf="isOpen">
+    <div *ngFor="let dropDownItem of dropDownItems">
+      <div (click)="handleItemSelect($event, dropDownItem)">
+        {{dropDownItem}}
+      </div>
+    </div>
   </div>
 </div>

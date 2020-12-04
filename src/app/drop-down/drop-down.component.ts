@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./drop-down.component.scss']
 })
 export class DropDownComponent {
-
+  dropDownItems: Array<string | number> = [1,2,3,4,5,6,7,8,9];
   @Input() isOpen: boolean;
 
   constructor() {
@@ -19,4 +19,8 @@ export class DropDownComponent {
     console.log('Toggle after: ', this.isOpen);
   }
 
+  public handleItemSelect(event: MouseEvent, item: string | number): void {
+    console.log('item: ', item);
+    this.toggle();
+  }
 }
